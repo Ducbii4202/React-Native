@@ -23,7 +23,7 @@ export default function App() {
           Age: {age}</Text>
         <TextInput
         style={styles.input}
-          onChangeText={(value) => setAge(value)}
+          onChangeText={(value) => setAge(+value)}
           keyboardType='numeric'
           maxLength={2}
       />

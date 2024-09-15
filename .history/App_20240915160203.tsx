@@ -15,6 +15,7 @@ export default function App() {
         <TextInput 
         style={styles.input}
           onChangeText={(value) => setName(value)}
+          keyboardType='numeric'
       />
       </View>
 
@@ -25,7 +26,6 @@ export default function App() {
         style={styles.input}
           onChangeText={(value) => setAge(value)}
           keyboardType='numeric'
-          maxLength={2}
       />
       </View>
      

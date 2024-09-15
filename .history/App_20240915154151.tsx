@@ -14,7 +14,8 @@ export default function App() {
           Name: {name}</Text>
         <TextInput 
         style={styles.input}
-          onChangeText={(value) => setName(value)}
+        multiline
+        onChangeText={(value) => setName(value)}
       />
       </View>
 
@@ -25,7 +26,6 @@ export default function App() {
         style={styles.input}
           onChangeText={(value) => setAge(value)}
           keyboardType='numeric'
-          maxLength={2}
       />
       </View>
      

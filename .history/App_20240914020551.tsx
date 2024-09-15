@@ -12,20 +12,18 @@ export default function App() {
       <View>
         <Text style={{ fontSize: 40, fontWeight: "600" }}>
           Name: {name}</Text>
-        <TextInput 
-        style={styles.input}
-          onChangeText={(value) => setName(value)}
+      <TextInput style={styles.input}
+        multiline
+        onChangeText={(value) => setName(value)}
       />
       </View>
 
       <View>
         <Text style={{ fontSize: 40, fontWeight: "600" }}>
           Age: {age}</Text>
-        <TextInput
-        style={styles.input}
-          onChangeText={(value) => setAge(value)}
-          keyboardType='numeric'
-          maxLength={2}
+      <TextInput style={styles.input}
+        multiline
+        onChangeText={(value) => setAge(value)}
       />
       </View>
      

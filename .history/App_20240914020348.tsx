@@ -5,30 +5,14 @@ import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 export default function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
-  const [age, setAge]= useState("");
   
   return (
     <View style={styles.container}>
-      <View>
-        <Text style={{ fontSize: 40, fontWeight: "600" }}>
-          Name: {name}</Text>
-        <TextInput 
-        style={styles.input}
-          onChangeText={(value) => setName(value)}
+      <Text style={{ fontSize: 40, fontWeight: "600" }}>Name: {name}</Text>
+      <TextInput style={styles.input}
+        multiline
+        onChangeText={(value) => setName(value)}
       />
-      </View>
-
-      <View>
-        <Text style={{ fontSize: 40, fontWeight: "600" }}>
-          Age: {age}</Text>
-        <TextInput
-        style={styles.input}
-          onChangeText={(value) => setAge(value)}
-          keyboardType='numeric'
-          maxLength={2}
-      />
-      </View>
-     
       <Text style={{fontSize:40, fontWeight:"600"}}>
       count = {count}
       </Text>
