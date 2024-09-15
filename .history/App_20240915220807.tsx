@@ -19,7 +19,6 @@ export default function App() {
   }
 
   const handleAddTodo = () => {
-    if (!todo) return;
     setListTodo([...listTodo,
       { id: randomInteger(1, 1000), name: todo }]);
     setTodo('')
@@ -44,7 +43,6 @@ export default function App() {
       {/* list todo */}
       <View style={styles.body}>
         <FlatList
-          keyExtractor={item => item.id + ''}
           data={listTodo}
           renderItem={({item}) => {
             return (

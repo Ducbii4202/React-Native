@@ -44,7 +44,6 @@ export default function App() {
       {/* list todo */}
       <View style={styles.body}>
         <FlatList
-          keyExtractor={item => item.id + ''}
           data={listTodo}
           renderItem={({item}) => {
             return (

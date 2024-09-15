@@ -1,29 +1,16 @@
 
 import { useState } from 'react';
-import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
-
-
-interface ITodo {
-  id: number;
-  name: string;
-}
 export default function App() {
   const [todo, setTodo] = useState('');
 
-  const [listTodo, setListTodo] = useState<ITodo[]>([]);
-
-
-  function randomInteger(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  const handleAddTodo = () => {
-    if (!todo) return;
-    setListTodo([...listTodo,
-      { id: randomInteger(1, 1000), name: todo }]);
-    setTodo('')
-  } 
+  const [listTodo, setListTodo] = useState([
+    {
+      // id: 1, name: 'watching TV'
+    }
+  ]);
+ 
   
   return (
     <View style={styles.container}>
@@ -32,28 +19,18 @@ export default function App() {
       {/* form */}
       <View style={styles.body}>
         <TextInput
-          value={todo}
           style={styles.todoInput}
           onChangeText={(value)=> setTodo(value)}
         />
         <Button title='Add todo'
-        onPress={handleAddTodo}
+        onPress={()=> alert('abiab')}
         />
       </View>
 
       {/* list todo */}
       <View style={styles.body}>
-        <FlatList
-          keyExtractor={item => item.id + ''}
-          data={listTodo}
-          renderItem={({item}) => {
-            return (
-        <Text style={styles.toDoItem}>
-          {item.name}
-              </Text>
-            )
-          }}
-        />
+        <Text>List todo: {todo}</Text>
+        <Text>{JSON.stringify(listTodo)}</Text>
       </View>
      
     </View>
@@ -85,15 +62,7 @@ const styles = StyleSheet.create({
 
   },
   body: {
-    paddingHorizontal: 10,
-    marginBottom: 20,
-  },
-  toDoItem: {
-    fontSize: 20,
-    marginBottom: 20,
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    padding: 10,
+    paddingHorizontal: 10
   }
   
 });

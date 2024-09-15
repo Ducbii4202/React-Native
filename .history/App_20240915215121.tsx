@@ -17,13 +17,7 @@ export default function App() {
   function randomInteger(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
-  const handleAddTodo = () => {
-    if (!todo) return;
-    setListTodo([...listTodo,
-      { id: randomInteger(1, 1000), name: todo }]);
-    setTodo('')
-  } 
+ 
   
   return (
     <View style={styles.container}>
@@ -32,19 +26,17 @@ export default function App() {
       {/* form */}
       <View style={styles.body}>
         <TextInput
-          value={todo}
           style={styles.todoInput}
           onChangeText={(value)=> setTodo(value)}
         />
         <Button title='Add todo'
-        onPress={handleAddTodo}
+        onPress={()=> setListTodo([...listTodo, {id: randomInteger(1, 1000), name: todo}])}
         />
       </View>
 
       {/* list todo */}
       <View style={styles.body}>
         <FlatList
-          keyExtractor={item => item.id + ''}
           data={listTodo}
           renderItem={({item}) => {
             return (
@@ -85,15 +77,13 @@ const styles = StyleSheet.create({
 
   },
   body: {
-    paddingHorizontal: 10,
-    marginBottom: 20,
+    paddingHorizontal: 10
   },
   toDoItem: {
-    fontSize: 20,
-    marginBottom: 20,
+    fontSize: 30,
+    marginBottom: 15,
     borderWidth: 1,
-    borderStyle: 'dashed',
-    padding: 10,
+    borderStyle: 'dotted'
   }
   
 });

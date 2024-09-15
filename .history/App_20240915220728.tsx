@@ -18,11 +18,7 @@ export default function App() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const handleAddTodo = () => {
-    if (!todo) return;
-    setListTodo([...listTodo,
-      { id: randomInteger(1, 1000), name: todo }]);
-    setTodo('')
+  const handleAddTodo = () => {setListTodo([...listTodo, {id: randomInteger(1, 1000), name: todo}])
   } 
   
   return (
@@ -44,7 +40,6 @@ export default function App() {
       {/* list todo */}
       <View style={styles.body}>
         <FlatList
-          keyExtractor={item => item.id + ''}
           data={listTodo}
           renderItem={({item}) => {
             return (
