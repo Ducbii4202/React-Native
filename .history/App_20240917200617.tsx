@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Alert, Button, FlatList, Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 
 
 
@@ -21,12 +21,12 @@ export default function App() {
   const handleAddTodo = () => {
     if (!todo) {
       Alert.alert('Bug input todo', "Todo ko dc de trong",
-        [
-          // {
-          //   text: 'Cancel',
-          //   onPress: () => console.log("OK Pressed"),
-          //   style: 'cancel',
-          // },
+        // [
+        //   {
+        //     text: 'Cancel',
+        //     onPress: () => console.log("OK Pressed"),
+        //     style: 'cancel',
+        //   },
           {text: 'Confirm', onPress: () =>console.log('OK Pressed')}
         ]
       )
@@ -39,7 +39,6 @@ export default function App() {
   } 
   
   return (
-    <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
     <View style={styles.container}>
       <Text style={styles.header}>ToDo App</Text>
 
@@ -69,8 +68,8 @@ export default function App() {
           }}
         />
       </View>
-      </View>
-    </TouchableWithoutFeedback>
+     
+    </View>
   );
 }
 
