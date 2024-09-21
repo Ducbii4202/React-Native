@@ -71,13 +71,11 @@ export default function App() {
           data={listTodo}
           renderItem={({item}) => {
             return (
-              <Pressable 
+              <Pressable onPress={() => deleteTodo(item.id)}
                 style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1 })}>
                 <View style={styles.groupTodo}>
                 <Text style={styles.toDoItem}>{item.name}</Text>
-                  <FontAwesome6 name="trash-can" size={24} color="black"
-                  onPress={() => deleteTodo(item.id)}
-                  />
+                <FontAwesome6 name="trash-can" size={24} color="black" />
                 </View>
                 
               </Pressable>

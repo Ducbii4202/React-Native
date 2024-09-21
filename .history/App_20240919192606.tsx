@@ -1,8 +1,7 @@
 
 import { useState } from 'react';
-import { Alert, Button, FlatList, Keyboard, Pressable, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, Button, FlatList, Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 import FlexBox from './components/flexbox';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 
@@ -12,9 +11,9 @@ interface ITodo {
   name: string;
 }
 export default function App() {
-  const [todo, setTodo] = useState('');
+  // const [todo, setTodo] = useState('');
 
-  const [listTodo, setListTodo] = useState<ITodo[]>([]);
+  // const [listTodo, setListTodo] = useState<ITodo[]>([]);
 
 
   function randomInteger(min: number, max: number) {
@@ -40,20 +39,14 @@ export default function App() {
       { id: randomInteger(1, 1000), name: todo }]);
     setTodo('')
   } 
-
-  const deleteTodo = (id: number) => {
-    const newTodo = listTodo.filter(item => item.id !== id);
-    setListTodo(newTodo);
-  }  
-
-
+  
   return (
     <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
     <View style={styles.container}>
       <Text style={styles.header}>ToDo App</Text>
 
       {/* form */}
-      <View style={styles.form}>
+      <View style={styles.body}>
         <TextInput
           value={todo}
           style={styles.todoInput}
@@ -65,23 +58,15 @@ export default function App() {
       </View>
 
       {/* list todo */}
-      <View style={styles.todo}>
+      <View style={styles.body}>
         <FlatList
           keyExtractor={item => item.id + ''}
           data={listTodo}
           renderItem={({item}) => {
             return (
-              <Pressable 
-                style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1 })}>
-                <View style={styles.groupTodo}>
-                <Text style={styles.toDoItem}>{item.name}</Text>
-                  <FontAwesome6 name="trash-can" size={24} color="black"
-                  onPress={() => deleteTodo(item.id)}
-                  />
-                </View>
-                
-              </Pressable>
-        
+        <Text style={styles.toDoItem}>
+          {item.name}
+              </Text>
             )
           }}
         />
@@ -99,33 +84,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 50,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   header: {
     backgroundColor: 'orange',
     paddingHorizontal: 20,
     textAlign: 'center',
     fontSize: 30,
-    flex: 1,
-
-  },
-  form: {
-    // flex: 2,
-    marginBottom: 20,
-    
-  },
-  todo: {
-    flex: 8,
-    
-  },
-  groupTodo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    marginBottom: 15,
-    justifyContent: 'space-between',
-    padding: 15,
-    marginHorizontal: 10,
   },
   todoInput: {
     borderBottomWidth: 1,
@@ -138,12 +104,12 @@ const styles = StyleSheet.create({
   body: {
     paddingHorizontal: 10,
     marginBottom: 20,
-    flex: 1,
   },
   toDoItem: {
     fontSize: 20,
-    // marginBottom: 20,
-    
+    marginBottom: 20,
+    borderWidth: 1,
+    borderStyle: 'dashed',
     padding: 10,
   }
   

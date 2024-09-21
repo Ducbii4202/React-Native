@@ -42,8 +42,8 @@ export default function App() {
   } 
 
   const deleteTodo = (id: number) => {
-    const newTodo = listTodo.filter(item => item.id !== id);
-    setListTodo(newTodo);
+    // const newTodo = listTodo.filter(item => item.id !== id);
+    // setListTodo(newTodo);
   }  
 
 
@@ -71,15 +71,10 @@ export default function App() {
           data={listTodo}
           renderItem={({item}) => {
             return (
-              <Pressable 
+              <Pressable onPress={() => deleteTodo(item.id)}
                 style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1 })}>
-                <View style={styles.groupTodo}>
                 <Text style={styles.toDoItem}>{item.name}</Text>
-                  <FontAwesome6 name="trash-can" size={24} color="black"
-                  onPress={() => deleteTodo(item.id)}
-                  />
-                </View>
-                
+                <FontAwesome6 name="trash-can" size={24} color="black" />
               </Pressable>
         
             )
@@ -99,6 +94,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 50,
+    borderWidth: 1,
+    borderColor: 'red',
   },
   header: {
     backgroundColor: 'orange',
@@ -109,23 +106,12 @@ const styles = StyleSheet.create({
 
   },
   form: {
-    // flex: 2,
-    marginBottom: 20,
+    flex: 2,
     
   },
   todo: {
     flex: 8,
     
-  },
-  groupTodo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    marginBottom: 15,
-    justifyContent: 'space-between',
-    padding: 15,
-    marginHorizontal: 10,
   },
   todoInput: {
     borderBottomWidth: 1,
@@ -142,8 +128,9 @@ const styles = StyleSheet.create({
   },
   toDoItem: {
     fontSize: 20,
-    // marginBottom: 20,
-    
+    marginBottom: 20,
+    borderWidth: 1,
+    borderStyle: 'dashed',
     padding: 10,
   }
   
