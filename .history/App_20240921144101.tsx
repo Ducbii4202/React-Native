@@ -15,7 +15,7 @@ SplashScreen.preventAutoHideAsync();
 
 const App = () => {
     const [loaded, error] = useFonts({
-    OPENSAN_REGULAR: require('./assets/fonts/OpenSans-Regular.ttf'),
+ 'OpenSans-Regular': require('./assets/fonts/OpenSans-Regular.ttf'),
     });
     
     useEffect(() => {

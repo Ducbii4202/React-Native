@@ -13,19 +13,19 @@ import { useEffect } from 'react';
 SplashScreen.preventAutoHideAsync();
 
 
+
 const App = () => {
     const [loaded, error] = useFonts({
-    OPENSAN_REGULAR: require('./assets/fonts/OpenSans-Regular.ttf'),
-    });
-    
-    useEffect(() => {
-    if (loaded || error) {
-    SplashScreen.hideAsync();
-    }
-    }, [loaded, error]);
-    if (!loaded && !error) {
-    return null;
-    }
+ 'Inter-Black': require('./assets/fonts/Inter-Black.otf'),
+ });
+ useEffect(() => {
+ if (loaded || error) {
+ SplashScreen.hideAsync();
+ }
+ }, [loaded, error]);
+ if (!loaded && !error) {
+ return null;
+ }
     return (
         <View>
             <HomeSreen />

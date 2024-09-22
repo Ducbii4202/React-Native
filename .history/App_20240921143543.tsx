@@ -15,17 +15,17 @@ SplashScreen.preventAutoHideAsync();
 
 const App = () => {
     const [loaded, error] = useFonts({
-    OPENSAN_REGULAR: require('./assets/fonts/OpenSans-Regular.ttf'),
+ 'HoidanIt': require('./assets/fonts/OpenSans-Regular.ttf'),
     });
     
-    useEffect(() => {
-    if (loaded || error) {
-    SplashScreen.hideAsync();
-    }
-    }, [loaded, error]);
-    if (!loaded && !error) {
-    return null;
-    }
+ useEffect(() => {
+ if (loaded || error) {
+ SplashScreen.hideAsync();
+ }
+ }, [loaded, error]);
+ if (!loaded && !error) {
+ return null;
+ }
     return (
         <View>
             <HomeSreen />
