@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles } from '../../utils/const';
 
 const styles = StyleSheet.create({
     about: {
@@ -10,7 +9,7 @@ const styles = StyleSheet.create({
 const AboutSreen = () => {
     return (
         <View>
-            <Text style={[styles.about, globalStyles.appFont]}>
+            <Text style={[styles.aboout]}>
                 About Sreen
             </Text>
             
