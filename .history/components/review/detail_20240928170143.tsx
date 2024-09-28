@@ -17,7 +17,7 @@ const DetailSreen = () => {
                 Detail Sreen
             </Text>
             <Button title='Review-detail'
-            onPress={()=> navigation.navigate('Home')}/>
+            onPress={()=> navigation.navigate('home')}/>
             
         </View>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button} from 'react-native';
 import { OPENSAN_REGULAR } from '../../utils/const';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { NavigationProp } from '@react-navigation/native';
 
 const DetailSreen = () => {
     const styles = StyleSheet.create({
@@ -10,14 +10,14 @@ const DetailSreen = () => {
             fontFamily: OPENSAN_REGULAR,
         }
     })
-    const navigation: NavigationProp<RootStackParamList>= useNavigation()
+    const navigation: NavigationProp<RootStackParamList>= ()
     return (
         <View>
             <Text style={styles.review}>
                 Detail Sreen
             </Text>
             <Button title='Review-detail'
-            onPress={()=> navigation.navigate('Home')}/>
+            onPress={()=> navigation.navigate('home')}/>
             
         </View>
     );

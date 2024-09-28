@@ -10,7 +10,7 @@ const HomeSreen = () => {
                 Home Sreen
             </Text>
             <Button title='home-page'
-            onPress={()=> navigation.navigate("review-detail")}/>
+            onPress={()=> navigation.navi}/>
         </View>
     );
 };
