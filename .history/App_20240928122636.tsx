@@ -44,7 +44,7 @@ const App = () => {
         <NavigationContainer>
       <Stack.Navigator>
                 <Stack.Screen name="home" component={HomeSreen}
-                options={{title:'Home Page'}}/>
+                options={{title:'Over-view'}}/>
         <Stack.Screen name="review-detail" component={DetailSreen} />
       </Stack.Navigator>
     </NavigationContainer>
