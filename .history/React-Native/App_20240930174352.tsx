@@ -42,7 +42,7 @@ const App = () => {
                 <Stack.Screen name="Home" component={HomeSreen}
                 options={{title:'Home Page'}}/>
           <Stack.Screen name="review-detail" component={DetailSreen}
-                options={{title:'Detail review'}}  />
+        options={{title:'Detail review'}}  />
       </Stack.Navigator>
     </NavigationContainer>
     );

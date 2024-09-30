@@ -19,8 +19,7 @@ const HomeSreen = () => {
     const styles = StyleSheet.create({
         reviews: {
             padding: 15,
-            backgroundColor: "#ccc",
-            margin: 15,
+            backgroundColor: "fff"
         }
     })
     return (
@@ -34,9 +33,8 @@ const HomeSreen = () => {
                     keyExtractor={(item )=> item.id + ""}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity
-                            onPress={()=> navigation.navigate("review-detail" , item)}>
-                        <View style={styles.reviews}>
+                        <TouchableOpacity>
+                        <View>
                             <Text>{item.title}</Text>
                                 </View>
                             </TouchableOpacity>
@@ -45,7 +43,7 @@ const HomeSreen = () => {
                 />
             </View>
             <Button title='View Detail'
-            />
+            onPress={()=> navigation.navigate("review-detail")}/>
         </View>
     );
 };

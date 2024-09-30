@@ -34,8 +34,7 @@ const HomeSreen = () => {
                     keyExtractor={(item )=> item.id + ""}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity
-                            onPress={()=> navigation.navigate("review-detail" , item)}>
+                        <TouchableOpacity>
                         <View style={styles.reviews}>
                             <Text>{item.title}</Text>
                                 </View>
@@ -45,7 +44,7 @@ const HomeSreen = () => {
                 />
             </View>
             <Button title='View Detail'
-            />
+            onPress={()=> navigation.navigate("review-detail")}/>
         </View>
     );
 };

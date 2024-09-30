@@ -23,6 +23,9 @@ const DetailSreen = () => {
     
     return (
         <View>
+            <Text style={styles.review}>
+                Review detail
+            </Text>
             <Text style={styles.reviewText}>ID: {route.params?.id}</Text>
             <Text style={styles.reviewText}>Title: {route.params?.title}</Text>
             <Text style={styles.reviewText}>Rating: {route.params?.start}</Text>

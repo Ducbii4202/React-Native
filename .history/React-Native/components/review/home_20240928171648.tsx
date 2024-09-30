@@ -1,6 +1,6 @@
 import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { _View, Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { _View, Button, FlatList, Text, TouchableOpacity, View } from 'react-native';
 
 
 interface IRview {
@@ -16,13 +16,6 @@ const HomeSreen = () => {
         {id: 3, title: "Nihao", start: 7},
         
     ])
-    const styles = StyleSheet.create({
-        reviews: {
-            padding: 15,
-            backgroundColor: "#ccc",
-            margin: 15,
-        }
-    })
     return (
         <View>
             <Text style={{fontSize: 30}}>
@@ -34,9 +27,8 @@ const HomeSreen = () => {
                     keyExtractor={(item )=> item.id + ""}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity
-                            onPress={()=> navigation.navigate("review-detail" , item)}>
-                        <View style={styles.reviews}>
+                        <TouchableOpacity>
+                        <View>
                             <Text>{item.title}</Text>
                                 </View>
                             </TouchableOpacity>
@@ -45,7 +37,7 @@ const HomeSreen = () => {
                 />
             </View>
             <Button title='View Detail'
-            />
+            onPress={()=> navigation.navigate("review-detail")}/>
         </View>
     );
 };

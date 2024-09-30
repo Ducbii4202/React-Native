@@ -23,9 +23,12 @@ const DetailSreen = () => {
     
     return (
         <View>
-            <Text style={styles.reviewText}>ID: {route.params?.id}</Text>
-            <Text style={styles.reviewText}>Title: {route.params?.title}</Text>
-            <Text style={styles.reviewText}>Rating: {route.params?.start}</Text>
+            <Text style={styles.review}>
+                Review detail
+            </Text>
+            <Text style={styles.reviewText}>{route.params?.id}</Text>
+            {/* <Text style={styles.reviewText}>{route.params?.title}</Text> */}
+            <Text style={styles.reviewText}>{route.params?.start}</Text>
             <Button title='Home Page'
             onPress={()=> navigation.navigate('Home')}/>
             

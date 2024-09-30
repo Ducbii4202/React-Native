@@ -35,7 +35,7 @@ const HomeSreen = () => {
                     renderItem={({ item }) => {
                         return (
                             <TouchableOpacity
-                            onPress={()=> navigation.navigate("review-detail" , item)}>
+                            onPress={()=> navigation.navigate("review-detail"),item}>
                         <View style={styles.reviews}>
                             <Text>{item.title}</Text>
                                 </View>

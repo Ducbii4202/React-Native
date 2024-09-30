@@ -9,23 +9,24 @@ const DetailSreen = () => {
         review: {
             fontSize: 30,
             fontFamily: OPENSAN_REGULAR,
-        },
+        }
         reviewText: {
             fontSize: 25,
             fontFamily: OPENSAN_REGULAR,
-            padding: 15,
 
         }
-        
     })
     const navigation: NavigationProp<RootStackParamList> = useNavigation()
     const route: RouteProp<RootStackParamList, 'review-detail'> = useRoute();
     
     return (
         <View>
-            <Text style={styles.reviewText}>ID: {route.params?.id}</Text>
-            <Text style={styles.reviewText}>Title: {route.params?.title}</Text>
-            <Text style={styles.reviewText}>Rating: {route.params?.start}</Text>
+            <Text style={styles.review}>
+                Review detail
+            </Text>
+            <Text>{route.params?.id}</Text>
+            <Text>{route.params?.title}</Text>
+            <Text>{route.params?.start}</Text>
             <Button title='Home Page'
             onPress={()=> navigation.navigate('Home')}/>
             

@@ -35,14 +35,17 @@ const App = () => {
     const Stack = createNativeStackNavigator<RootStackParamList>();
     
     return (
-       
+        // <View>
+        //     <HomeSreen />
+        //     <DetailSreen />
+        //     <AboutSreen/>
+        // </View>
 
         <NavigationContainer>
       <Stack.Navigator>
                 <Stack.Screen name="Home" component={HomeSreen}
                 options={{title:'Home Page'}}/>
-          <Stack.Screen name="review-detail" component={DetailSreen}
-                options={{title:'Detail review'}}  />
+        <Stack.Screen name="review-detail" component={DetailSreen} />
       </Stack.Navigator>
     </NavigationContainer>
     );
